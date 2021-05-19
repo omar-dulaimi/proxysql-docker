@@ -18,6 +18,17 @@ This image is maintained by Severalnines and will be updated regularly on best-e
 
 ## Run ##
 
+To run a ProxySQL container WITHOUT custom ProxySQL configuration file:
+```bash
+$ docker run -d \
+--name proxysql2 \
+--publish 6033:6033 \
+--publish 6032:6032 \
+--publish 6080:6080 \
+--restart=unless-stopped \
+severalnines/proxysql:2.0
+```
+
 To run a ProxySQL container with a custom ProxySQL configuration file:
 ```bash
 $ docker run -d \
@@ -29,6 +40,10 @@ $ docker run -d \
 -v /root/proxysql/proxysql.cnf:/etc/proxysql.cnf \
 severalnines/proxysql:2.0
 ```
+
+## Access ##
+as found here: https://severalnines.com/database-blog/how-run-and-configure-proxysql-20-mysql-galera-cluster-docker
+```bash docker exec -it proxysql2 mysql -uadmin -padmin -h127.0.0.1 -P6032 --prompt='Admin> '```
 
 For a list of available Docker image version, please refer to [Supported Tags](#supported-tags) section.
 
