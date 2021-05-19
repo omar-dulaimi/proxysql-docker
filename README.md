@@ -43,7 +43,9 @@ severalnines/proxysql:2.0
 
 ## Access ##
 as found here: https://severalnines.com/database-blog/how-run-and-configure-proxysql-20-mysql-galera-cluster-docker
-```bash docker exec -it proxysql2 mysql -uadmin -padmin -h127.0.0.1 -P6032 --prompt='Admin> '```
+```bash 
+docker exec -it proxysql2 mysql -uadmin -padmin -h127.0.0.1 -P6032 --prompt='Admin> '
+```
 
 For a list of available Docker image version, please refer to [Supported Tags](#supported-tags) section.
 
